@@ -1,0 +1,125 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="circle"></div>
+  </div>
+
+
+    <script>
+const circle = document.querySelector('.circle');
+const radius = 150; // radius of the circle
+let angle = 0;
+
+function animateCircle() {
+  const x = radius * Math.cos(angle) + radius;
+  const y = radius * Math.sin(angle) + radius;
+  
+  circle.style.transform = `translate(${x}px, ${y}px)`;
+
+  // Increase the angle to animate the circle
+  angle += 0.05;
+
+  // Loop the animation
+  requestAnimationFrame(animateCircle);
+}
+
+animateCircle();
+
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Circle Animation</title>
+  <style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #171a1b;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    perspective: 1000px;
+  }
+  .circle {
+    position :absolute;
+    width: 400px ;
+    height: 400px;
+    border-radius: 50%;
+    border: 10px dashed rgb(93, 135, 226);
+    transform: rotatex(70deg);
+    transform-style: preserve-3d;
+    box-shadow:2px 2px  2px 5px#5baac2 , inset 0px 0px 60px  #2a62db;
+    
+  }
+  .number{
+text-align: center;
+color: azure;
+font-size: 35px;
+font-weight: 600;
+font-family:'Times New Roman', Times, serif;
+
+}
+  
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="circle">
+
+    </div>
+    <div class="number">45 <br> km/hr </div>
+    </div>
+
+  </script>
+</body>
+</html>
