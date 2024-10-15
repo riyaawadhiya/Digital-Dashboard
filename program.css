@@ -1,0 +1,275 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #171a1b;
+  }
+  #brakets {
+    display: flex;
+  }
+  #img01 {
+    width: 700px;
+    height: 500px;
+    box-shadow: 20px 20px 200px 200px #5baac2, inset 0px 0px 100px #2a62db;
+    clip-path: polygon(
+      37% 0%,
+      18% 0%,
+      8% 34%,
+      21% 90%,
+      35% 99%,
+      30% 88%,
+      19% 34%,
+      27% 2%,
+      37% 2%
+    );
+    position: relative;
+    left: 20%;
+  }
+
+  #img03{
+    width: 750px;
+    height: 520px;
+    clip-path: polygon(
+      37% 0%,
+      18% 0%,
+      8% 34%,
+      21% 90%,
+      35% 99%,
+      22% 88%,
+      10% 34%,
+      20% 1%,
+      37% 1%
+    );
+    position: absolute;
+    left: 17%;
+    top: -10px;
+    background-color: black;
+    z-index: -1;
+    box-shadow: inset 0px 0px 100px #db2a2a;
+  }
+
+
+  #img02 {
+    clip-path: polygon(
+      37% 2%,
+      27% 2%,
+      19% 34%,
+      30% 88%,
+      35% 99%,
+      21% 90%,
+      8% 34%,
+      18% 0%,
+      37% 0%
+    );
+    position: relative;
+    right:33%;
+    transform: scaleX(-1);
+    width: 700px;
+    height: 500px;
+    box-shadow: 20px 20px 200px 200px #5baac2, inset 0px 0px 100px #2a62db;
+  }
+
+  #img04{
+    width: 750px;
+    height: 520px;
+    clip-path: polygon(
+      37% 0%,
+      18% 0%,
+      8% 34%,
+      21% 90%,
+      35% 99%,
+      22% 88%,
+      10% 34%,
+      20% 1%,
+      37% 1%
+    );
+    position: absolute;
+    right:30%;
+    transform: scaleX(-1);
+    background-color: black;
+    top: -10px;
+    z-index: 1;
+    box-shadow: inset 0px 0px 100px #db2a2a;
+  }
+
+
+
+
+
+  #img01::after,
+  #img02::after {
+    content: "";
+    box-shadow: 20px 20px 200px 200px rgba(0, 255, 255, 0.3), inset 0px 0px 100px rgba(0, 255, 255, 0.6);
+  }
+  .wrapper {
+    /* filter: drop-shadow(-1px 6px 4px rgba(0, 255, 55, 0.9)); */
+    filter: blur(2px);
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    bottom: 250px;
+    perspective: 1000px;
+    position: absolute;
+  }
+  .circle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 20px dashed rgba(0, 255, 255, 0.8);
+    transform: rotatex(70deg);
+    transform-style: preserve-3d;
+    box-shadow: 2px 2px 40px 15px rgba(0, 255, 255, 0.3), inset 0px 0px 60px rgba(0, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    animation-name: animate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .smallcircle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 0px rgba(0, 255, 55, 0.9));
+    transform: rotatex(180deg);
+    transform-style: preserve-3d;
+    box-shadow: 2px 2px 2px 5px#5baac2, inset 0px 0px 60px #2a62db;
+  }
+  .number {
+    width: 100px;
+    text-align: center;
+    /* color: azure; */
+    color: #00ffff;
+    font-size: 60px;
+    font-weight: 200;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    position: relative;
+    top: -5px;
+    transition: all 2s;
+  }
+  .number > #speedValue {
+    font-size: 60px;
+  }
+
+  .number > .info {
+    font-size: 14px;
+    line-height: 0%;
+    position: relative;
+    top: -40px;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotateX(70deg) rotateZ(0deg); /* Maintain 3D rotation */
+    }
+    100% {
+      transform: rotateX(70deg) rotateZ(360deg); /* Rotate border along Z-axis */
+    }
+  }
+
+  .progress-container {
+    width: 20%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 180px;
+    left: 37%;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3),
+      0 0 50px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.6);
+  }
+
+  .progress-bar {
+    height: 100%;
+    position: relative;
+    box-shadow: 0 10px 15px rgba(0, 255, 255, 0.6),
+      0 10px 50px rgba(0, 255, 255, 0.8);
+    transition: width 2s ease, background-color 2s ease;
+  }
+
+  .glow {
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 5px 10px rgba(0, 255, 255, 0.8),
+      0 10px 50px rgba(0, 255, 255, 1), 0 0 100px rgba(0, 255, 255, 1);
+    filter: blur(2px);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6),
+        0 0 50px rgba(0, 255, 255, 0.8);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(0, 255, 255, 1),
+        0 0 80px rgba(0, 255, 255, 1);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6),
+        0 0 50px rgba(0, 255, 255, 0.8);
+    }
+  }
+
+
+
+  /* Button Style */
+  .button {
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(0, 255, 255, 0.3);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6),
+      0 0 50px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0px 0px 5px #00ffff;
+    position: absolute;
+  }
+
+  .button:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 1),
+      0 0 80px rgba(0, 255, 255, 1), inset 0 0 20px #00ffff99;
+    transform: scale(1.1);
+  }
+  .button:nth-child(1){
+
+    top: 46%;
+    left: 8%;
+  }
+  .button:nth-child(2){
+    top: 58%;
+    left: 10%;
+  }
+  .button:nth-child(3){
+    top: 70%;
+    left: 12%;
+  }
+  .button:nth-child(4){
+    top: 70%;
+    left: 77%;
+  }
+  .button:nth-child(5){
+    top: 58%;
+    left: 79%;
+  }
+  .button:nth-child(6){
+    top: 45%;
+    left: 81%;
+  }
+  
